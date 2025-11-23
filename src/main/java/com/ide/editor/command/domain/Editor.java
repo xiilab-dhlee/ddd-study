@@ -1,6 +1,6 @@
 package com.ide.editor.command.domain;
 
-import com.myshop.common.event.Events;
+import com.ide.common.event.Events;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -87,7 +87,7 @@ public class Editor {
     }
 
     public void formatDocument() {
-        // 포맷팅 로직 실행
+        // ?�맷??로직 ?�행
         this.lastModifiedAt = LocalDateTime.now();
         Events.raise(new DocumentFormattedEvent(id, formattingRule));
     }

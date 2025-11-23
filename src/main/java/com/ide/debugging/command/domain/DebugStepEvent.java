@@ -1,6 +1,6 @@
 package com.ide.debugging.command.domain;
 
-import com.myshop.common.event.Event;
+import com.ide.common.event.Event;
 
 public class DebugStepEvent extends Event {
     

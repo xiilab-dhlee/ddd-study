@@ -20,7 +20,7 @@ public class CodeCompletionService {
         CodeCompletionId id = CodeCompletionId.generate();
         CodeCompletion completion = new CodeCompletion(id, filePath, position);
         
-        // AI 기반 코드 완성 로직 (여기서는 샘플 데이터)
+        // AI 기반 코드 ?�성 로직 (?�기?�는 ?�플 ?�이??
         List<CompletionItem> suggestions = generateCompletions(filePath, position);
         suggestions.forEach(completion::addCompletionItem);
         
@@ -29,7 +29,7 @@ public class CodeCompletionService {
     }
 
     private List<CompletionItem> generateCompletions(String filePath, int position) {
-        // 실제로는 LSP(Language Server Protocol)나 AI 모델을 통해 완성 제안 생성
+        // ?�제로는 LSP(Language Server Protocol)??AI 모델???�해 ?�성 ?�안 ?�성
         return List.of(
             new CompletionItem("toString", "toString()", 
                 CompletionItem.CompletionType.METHOD, 

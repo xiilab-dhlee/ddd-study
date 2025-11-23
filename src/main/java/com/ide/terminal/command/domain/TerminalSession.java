@@ -1,6 +1,6 @@
 package com.ide.terminal.command.domain;
 
-import com.myshop.common.event.Events;
+import com.ide.common.event.Events;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

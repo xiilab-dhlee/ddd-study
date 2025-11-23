@@ -1,6 +1,6 @@
 package com.ide.collaboration.command.domain;
 
-import com.myshop.common.event.Events;
+import com.ide.common.event.Events;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -54,7 +54,7 @@ public class CollaborationSession {
         this.maxParticipants = 10;
         this.createdAt = LocalDateTime.now();
         
-        // 호스트를 첫 번째 참가자로 추가
+        // ?�스?��? �?번째 참�??�로 추�?
         this.participants.add(new Participant(hostUserId, "Host", Participant.ParticipantRole.OWNER));
         
         Events.raise(new CollaborationSessionCreatedEvent(id, sessionName, hostUserId));

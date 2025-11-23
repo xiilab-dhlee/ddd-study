@@ -1,18 +1,6 @@
-## 📚 프로젝트 구조
+## 🎯 프로젝트 개요
 
-이 프로젝트는 두 개의 주요 도메인으로 구성되어 있습니다:
-
-### 1. MyShop 도메인 (기존)
-전자상거래 시스템을 DDD 패턴으로 구현한 예제
-
-### 2. IDE 도메인 (신규)
-코드 에디터(IDE) 시스템을 DDD 패턴으로 구현한 예제
-
----
-
-## 🎯 IDE 도메인 개요
-
-IDE 도메인은 Cursor와 같은 현대적인 코드 에디터의 핵심 기능들을 DDD(Domain-Driven Design) 패턴으로 구현한 프로젝트입니다. 10개의 바운디드 컨텍스트로 구성되어 있으며, 각 컨텍스트는 명확하게 분리된 책임과 기능을 가지고 있습니다.
+이 프로젝트는 Cursor와 같은 현대적인 코드 에디터(IDE)의 핵심 기능들을 DDD(Domain-Driven Design) 패턴으로 구현한 예제입니다. 10개의 바운디드 컨텍스트로 구성되어 있으며, 각 컨텍스트는 명확하게 분리된 책임과 기능을 가지고 있습니다.
 
 ### 📁 프로젝트 위치
 ```
@@ -346,7 +334,8 @@ com/ide/{도메인명}/
 - **Spring Boot**: 애플리케이션 프레임워크
 - **Spring Data JPA**: 영속성 관리
 - **JPA/Hibernate**: ORM
-- **H2/MySQL**: 데이터베이스
+- **MySQL**: 데이터베이스
+- **Maven**: 빌드 도구
 
 ---
 
@@ -385,11 +374,43 @@ Cursor와 같은 현대적인 IDE의 실제 기능들을 모델링했습니다.
 
 ---
 
+## 🎬 시작하기
+
+### 데이터베이스 설정
+
+1. MySQL 서버 실행
+2. DDL 스크립트 실행:
+```bash
+mysql -u root -p < src/sql/ddl.sql
+```
+
+3. 초기 데이터 삽입:
+```bash
+mysql -u root -p < src/sql/init.sql
+```
+
+### 애플리케이션 실행
+
+```bash
+mvn spring-boot:run
+```
+
+또는
+
+```bash
+mvn clean package
+java -jar target/ide-application.jar
+```
+
+애플리케이션은 `http://localhost:8080`에서 실행됩니다.
+
+---
+
 ## 📖 참고 자료
 
-- [도메인 주도 개발 시작하기](https://www.hanbit.co.kr/store/books/look.php?p_code=B4309942517)
-- [Cursor IDE](https://cursor.sh/)
-- Domain-Driven Design by Eric Evans
+- [도메인 주도 개발 시작하기](https://www.hanbit.co.kr/store/books/look.php?p_code=B4309942517) - DDD 기본 개념 학습
+- [Cursor IDE](https://cursor.sh/) - 실제 IDE 참조
+- Domain-Driven Design by Eric Evans - DDD 원론
 
 ---
 
