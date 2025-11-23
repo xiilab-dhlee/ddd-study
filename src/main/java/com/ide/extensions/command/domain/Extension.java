@@ -8,38 +8,38 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "extension")
 public class Extension {
-    
+
     @EmbeddedId
     private ExtensionId id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "version")
     private String version;
-    
+
     @Column(name = "description", length = 1000)
     private String description;
-    
+
     @Column(name = "publisher")
     private String publisher;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private ExtensionStatus status;
-    
+
     @Column(name = "download_count")
     private Long downloadCount;
-    
+
     @Column(name = "rating")
     private Double rating;
-    
+
     @Column(name = "install_path")
     private String installPath;
-    
+
     @Column(name = "installed_at")
     private LocalDateTime installedAt;
-    
+
     @Column(name = "published_at")
     private LocalDateTime publishedAt;
 
@@ -99,7 +99,6 @@ public class Extension {
         this.rating = newRating;
     }
 
-    // Getters
     public ExtensionId getId() {
         return id;
     }

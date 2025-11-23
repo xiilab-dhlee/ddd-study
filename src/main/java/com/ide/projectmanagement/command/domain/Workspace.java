@@ -10,31 +10,31 @@ import java.util.List;
 @Entity
 @Table(name = "workspace")
 public class Workspace {
-    
+
     @EmbeddedId
     private WorkspaceId id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "root_path")
     private String rootPath;
-    
+
     @ElementCollection
     @CollectionTable(name = "workspace_folders", 
                     joinColumns = @JoinColumn(name = "workspace_id"))
     @Column(name = "folder_path")
     private List<String> folders;
-    
+
     @Column(name = "git_enabled")
     private boolean gitEnabled;
-    
+
     @Column(name = "git_repository_url")
     private String gitRepositoryUrl;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "last_opened_at")
     private LocalDateTime lastOpenedAt;
 
@@ -49,7 +49,7 @@ public class Workspace {
         this.gitEnabled = false;
         this.createdAt = LocalDateTime.now();
         this.lastOpenedAt = LocalDateTime.now();
-        
+
         Events.raise(new WorkspaceCreatedEvent(id, name, rootPath));
     }
 
@@ -76,7 +76,6 @@ public class Workspace {
         this.lastOpenedAt = LocalDateTime.now();
     }
 
-    // Getters
     public WorkspaceId getId() {
         return id;
     }

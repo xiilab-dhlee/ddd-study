@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserSettingsService {
-    
+
     private UserSettingsRepository userSettingsRepository;
 
     public UserSettingsService(UserSettingsRepository userSettingsRepository) {

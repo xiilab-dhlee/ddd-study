@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class CodeCompletionId implements Serializable {
-    
+
     @Column(name = "completion_id")
     private String id;
 

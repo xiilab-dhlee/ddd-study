@@ -3,7 +3,7 @@ package com.ide.debugging.command.domain;
 import com.ide.common.event.Event;
 
 public class DebugSessionPausedEvent extends Event {
-    
+
     private DebugSessionId sessionId;
 
     public DebugSessionPausedEvent(DebugSessionId sessionId) {

@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AIModelService {
-    
+
     private AIModelRepository aiModelRepository;
 
     public AIModelService(AIModelRepository aiModelRepository) {

@@ -3,7 +3,7 @@ package com.ide.agent.command.domain;
 import com.ide.common.event.Event;
 
 public class AgentTaskCompletedEvent extends Event {
-    
+
     private AgentId agentId;
     private String result;
 

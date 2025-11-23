@@ -10,33 +10,33 @@ import java.util.List;
 @Entity
 @Table(name = "collaboration_session")
 public class CollaborationSession {
-    
+
     @EmbeddedId
     private CollaborationSessionId id;
-    
+
     @Column(name = "session_name")
     private String sessionName;
-    
+
     @Column(name = "host_user_id")
     private String hostUserId;
-    
+
     @ElementCollection
     @CollectionTable(name = "collaboration_participants", 
                     joinColumns = @JoinColumn(name = "session_id"))
     private List<Participant> participants;
-    
+
     @Column(name = "shared_file_path")
     private String sharedFilePath;
-    
+
     @Column(name = "is_active")
     private boolean isActive;
-    
+
     @Column(name = "max_participants")
     private int maxParticipants;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "ended_at")
     private LocalDateTime endedAt;
 
@@ -53,10 +53,9 @@ public class CollaborationSession {
         this.isActive = true;
         this.maxParticipants = 10;
         this.createdAt = LocalDateTime.now();
-        
-        // ?¸ìŠ¤?¸ë? ì²?ë²ˆì§¸ ì°¸ê??ë¡œ ì¶”ê?
+
         this.participants.add(new Participant(hostUserId, "Host", Participant.ParticipantRole.OWNER));
-        
+
         Events.raise(new CollaborationSessionCreatedEvent(id, sessionName, hostUserId));
     }
 
@@ -67,7 +66,7 @@ public class CollaborationSession {
         if (participants.size() >= maxParticipants) {
             throw new IllegalStateException("Maximum participants reached");
         }
-        
+
         Participant participant = new Participant(userId, userName, role);
         participants.add(participant);
         Events.raise(new ParticipantJoinedEvent(id, userId, userName));
@@ -91,7 +90,6 @@ public class CollaborationSession {
         Events.raise(new CollaborationSessionEndedEvent(id));
     }
 
-    // Getters
     public CollaborationSessionId getId() {
         return id;
     }

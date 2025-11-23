@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class UserSettingsId implements Serializable {
-    
+
     @Column(name = "settings_id")
     private String id;
 

@@ -3,7 +3,7 @@ package com.ide.projectmanagement.command.domain;
 import com.ide.common.event.Event;
 
 public class GitEnabledEvent extends Event {
-    
+
     private WorkspaceId workspaceId;
     private String repositoryUrl;
 

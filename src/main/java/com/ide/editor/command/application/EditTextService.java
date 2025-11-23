@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class EditTextService {
-    
+
     private EditorRepository editorRepository;
 
     public EditTextService(EditorRepository editorRepository) {

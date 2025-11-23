@@ -5,27 +5,27 @@ import javax.persistence.*;
 @Entity
 @Table(name = "diagnostic")
 public class Diagnostic {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "file_path")
     private String filePath;
-    
+
     @Column(name = "line_number")
     private int line;
-    
+
     @Column(name = "column_number")
     private int column;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "severity")
     private DiagnosticSeverity severity;
-    
+
     @Column(name = "message")
     private String message;
-    
+
     @Column(name = "error_code")
     private String errorCode;
 

@@ -6,7 +6,7 @@ import javax.persistence.Lob;
 
 @Embeddable
 public class TextContent {
-    
+
     @Lob
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;

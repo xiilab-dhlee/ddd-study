@@ -3,7 +3,7 @@ package com.ide.settings.command.domain;
 import com.ide.common.event.Event;
 
 public class SettingsSyncEnabledEvent extends Event {
-    
+
     private UserSettingsId settingsId;
 
     public SettingsSyncEnabledEvent(UserSettingsId settingsId) {

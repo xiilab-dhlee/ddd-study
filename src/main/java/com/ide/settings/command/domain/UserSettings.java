@@ -10,32 +10,32 @@ import java.util.Map;
 @Entity
 @Table(name = "user_settings")
 public class UserSettings {
-    
+
     @EmbeddedId
     private UserSettingsId id;
-    
+
     @Column(name = "user_id")
     private String userId;
-    
+
     @Embedded
     private EditorSettings editorSettings;
-    
+
     @Embedded
     private ThemeSettings themeSettings;
-    
+
     @ElementCollection
     @CollectionTable(name = "keybindings", 
                     joinColumns = @JoinColumn(name = "settings_id"))
     @MapKeyColumn(name = "command")
     @Column(name = "keybinding")
     private Map<String, String> keybindings;
-    
+
     @Column(name = "sync_enabled")
     private boolean syncEnabled;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
@@ -51,7 +51,7 @@ public class UserSettings {
         this.syncEnabled = false;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        
+
         Events.raise(new UserSettingsCreatedEvent(id, userId));
     }
 
@@ -81,7 +81,6 @@ public class UserSettings {
         this.syncEnabled = false;
     }
 
-    // Getters
     public UserSettingsId getId() {
         return id;
     }

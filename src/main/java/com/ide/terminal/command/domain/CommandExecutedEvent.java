@@ -3,7 +3,7 @@ package com.ide.terminal.command.domain;
 import com.ide.common.event.Event;
 
 public class CommandExecutedEvent extends Event {
-    
+
     private TerminalSessionId sessionId;
     private String command;
 

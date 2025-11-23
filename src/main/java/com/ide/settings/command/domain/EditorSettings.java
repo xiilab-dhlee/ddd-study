@@ -5,25 +5,25 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class EditorSettings {
-    
+
     @Column(name = "font_size")
     private int fontSize;
-    
+
     @Column(name = "font_family")
     private String fontFamily;
-    
+
     @Column(name = "tab_size")
     private int tabSize;
-    
+
     @Column(name = "insert_spaces")
     private boolean insertSpaces;
-    
+
     @Column(name = "word_wrap")
     private boolean wordWrap;
-    
+
     @Column(name = "line_numbers")
     private boolean lineNumbers;
-    
+
     @Column(name = "auto_save")
     private boolean autoSave;
 
@@ -46,7 +46,6 @@ public class EditorSettings {
         return new EditorSettings(14, "Consolas", 4, true, false, true, true);
     }
 
-    // Getters
     public int getFontSize() {
         return fontSize;
     }

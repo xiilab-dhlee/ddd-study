@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class DebugSessionId implements Serializable {
-    
+
     @Column(name = "session_id")
     private String id;
 

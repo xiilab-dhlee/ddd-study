@@ -3,7 +3,7 @@ package com.ide.extensions.command.domain;
 import com.ide.common.event.Event;
 
 public class ExtensionUninstalledEvent extends Event {
-    
+
     private ExtensionId extensionId;
     private String name;
 

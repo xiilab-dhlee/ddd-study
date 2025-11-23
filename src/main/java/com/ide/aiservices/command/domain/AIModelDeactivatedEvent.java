@@ -3,7 +3,7 @@ package com.ide.aiservices.command.domain;
 import com.ide.common.event.Event;
 
 public class AIModelDeactivatedEvent extends Event {
-    
+
     private AIModelId modelId;
     private String modelName;
 

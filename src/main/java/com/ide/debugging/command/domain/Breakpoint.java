@@ -5,23 +5,23 @@ import javax.persistence.*;
 @Entity
 @Table(name = "breakpoint")
 public class Breakpoint {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "file_path")
     private String filePath;
-    
+
     @Column(name = "line_number")
     private int lineNumber;
-    
+
     @Column(name = "condition")
     private String condition;
-    
+
     @Column(name = "enabled")
     private boolean enabled;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private BreakpointType type;
@@ -48,7 +48,6 @@ public class Breakpoint {
         this.enabled = false;
     }
 
-    // Getters
     public Long getId() {
         return id;
     }

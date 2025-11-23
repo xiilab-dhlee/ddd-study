@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class CollaborationSessionId implements Serializable {
-    
+
     @Column(name = "collaboration_session_id")
     private String id;
 

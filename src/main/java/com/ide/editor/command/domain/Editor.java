@@ -10,38 +10,38 @@ import java.util.List;
 @Entity
 @Table(name = "editor")
 public class Editor {
-    
+
     @EmbeddedId
     private EditorId id;
-    
+
     @Column(name = "file_path")
     private String filePath;
-    
+
     @Embedded
     private TextContent content;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "language")
     private ProgrammingLanguage language;
-    
+
     @Embedded
     private CursorPosition cursorPosition;
-    
+
     @Embedded
     private FormattingRule formattingRule;
-    
+
     @Column(name = "syntax_highlighting_enabled")
     private boolean syntaxHighlightingEnabled;
-    
+
     @Column(name = "code_folding_enabled")
     private boolean codeFoldingEnabled;
-    
+
     @Column(name = "minimap_enabled")
     private boolean minimapEnabled;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "last_modified_at")
     private LocalDateTime lastModifiedAt;
 
@@ -60,7 +60,7 @@ public class Editor {
         this.minimapEnabled = true;
         this.createdAt = LocalDateTime.now();
         this.lastModifiedAt = LocalDateTime.now();
-        
+
         Events.raise(new EditorOpenedEvent(id, filePath, language));
     }
 
@@ -87,7 +87,7 @@ public class Editor {
     }
 
     public void formatDocument() {
-        // ?�맷??로직 ?�행
+
         this.lastModifiedAt = LocalDateTime.now();
         Events.raise(new DocumentFormattedEvent(id, formattingRule));
     }
@@ -108,7 +108,6 @@ public class Editor {
         this.formattingRule = newRule;
     }
 
-    // Getters
     public EditorId getId() {
         return id;
     }

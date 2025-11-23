@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class CodeCompletionService {
-    
+
     private CodeCompletionRepository codeCompletionRepository;
 
     public CodeCompletionService(CodeCompletionRepository codeCompletionRepository) {
@@ -19,17 +19,16 @@ public class CodeCompletionService {
     public CodeCompletionId requestCompletion(String filePath, int position) {
         CodeCompletionId id = CodeCompletionId.generate();
         CodeCompletion completion = new CodeCompletion(id, filePath, position);
-        
-        // AI 기반 코드 ?�성 로직 (?�기?�는 ?�플 ?�이??
+
         List<CompletionItem> suggestions = generateCompletions(filePath, position);
         suggestions.forEach(completion::addCompletionItem);
-        
+
         codeCompletionRepository.save(completion);
         return id;
     }
 
     private List<CompletionItem> generateCompletions(String filePath, int position) {
-        // ?�제로는 LSP(Language Server Protocol)??AI 모델???�해 ?�성 ?�안 ?�성
+
         return List.of(
             new CompletionItem("toString", "toString()", 
                 CompletionItem.CompletionType.METHOD, 

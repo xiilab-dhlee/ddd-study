@@ -8,35 +8,35 @@ import java.util.List;
 @Entity
 @Table(name = "code_review")
 public class CodeReview {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "title")
     private String title;
-    
+
     @Column(name = "file_path")
     private String filePath;
-    
+
     @Column(name = "author_id")
     private String authorId;
-    
+
     @Column(name = "reviewer_id")
     private String reviewerId;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private ReviewStatus status;
-    
+
     @ElementCollection
     @CollectionTable(name = "review_comments", 
                     joinColumns = @JoinColumn(name = "review_id"))
     private List<ReviewComment> comments;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
@@ -66,7 +66,6 @@ public class CodeReview {
         this.status = ReviewStatus.CHANGES_REQUESTED;
     }
 
-    // Getters
     public Long getId() {
         return id;
     }

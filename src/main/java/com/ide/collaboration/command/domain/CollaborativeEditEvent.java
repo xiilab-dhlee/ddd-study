@@ -3,7 +3,7 @@ package com.ide.collaboration.command.domain;
 import com.ide.common.event.Event;
 
 public class CollaborativeEditEvent extends Event {
-    
+
     private CollaborationSessionId sessionId;
     private String userId;
     private String editType;

@@ -10,21 +10,21 @@ import java.util.List;
 @Entity
 @Table(name = "code_completion")
 public class CodeCompletion {
-    
+
     @EmbeddedId
     private CodeCompletionId id;
-    
+
     @Column(name = "file_path")
     private String filePath;
-    
+
     @Column(name = "trigger_position")
     private int triggerPosition;
-    
+
     @ElementCollection
     @CollectionTable(name = "completion_items", 
                     joinColumns = @JoinColumn(name = "completion_id"))
     private List<CompletionItem> items;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

@@ -6,30 +6,30 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "file_node")
 public class FileNode {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "path")
     private String path;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private FileNodeType type;
-    
+
     @Column(name = "parent_path")
     private String parentPath;
-    
+
     @Column(name = "size")
     private Long size;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 
@@ -55,7 +55,6 @@ public class FileNode {
         this.modifiedAt = LocalDateTime.now();
     }
 
-    // Getters
     public Long getId() {
         return id;
     }

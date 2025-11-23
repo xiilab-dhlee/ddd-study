@@ -5,13 +5,13 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class FormattingRule {
-    
+
     @Column(name = "indent_size")
     private int indentSize;
-    
+
     @Column(name = "use_tabs")
     private boolean useTabs;
-    
+
     @Column(name = "trim_trailing_whitespace")
     private boolean trimTrailingWhitespace;
 

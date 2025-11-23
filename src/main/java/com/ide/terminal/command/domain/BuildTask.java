@@ -6,35 +6,35 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "build_task")
 public class BuildTask {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "command")
     private String command;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private BuildTaskType type;
-    
+
     @Column(name = "working_directory")
     private String workingDirectory;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private BuildTaskStatus status;
-    
+
     @Lob
     @Column(name = "output", columnDefinition = "TEXT")
     private String output;
-    
+
     @Column(name = "started_at")
     private LocalDateTime startedAt;
-    
+
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
@@ -66,7 +66,6 @@ public class BuildTask {
         this.completedAt = LocalDateTime.now();
     }
 
-    // Getters
     public Long getId() {
         return id;
     }

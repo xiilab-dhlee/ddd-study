@@ -8,31 +8,31 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "agent_task")
 public class AgentTask {
-    
+
     @EmbeddedId
     private AgentId id;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "task_type")
     private AgentTaskType taskType;
-    
+
     @Column(name = "description", length = 2000)
     private String description;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private AgentTaskStatus status;
-    
+
     @Column(name = "context_files", length = 1000)
     private String contextFiles;
-    
+
     @Lob
     @Column(name = "result", columnDefinition = "TEXT")
     private String result;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
@@ -46,7 +46,7 @@ public class AgentTask {
         this.contextFiles = contextFiles;
         this.status = AgentTaskStatus.PENDING;
         this.createdAt = LocalDateTime.now();
-        
+
         Events.raise(new AgentTaskCreatedEvent(id, taskType, description));
     }
 
@@ -75,7 +75,6 @@ public class AgentTask {
         Events.raise(new AgentTaskFailedEvent(id, errorMessage));
     }
 
-    // Getters
     public AgentId getId() {
         return id;
     }

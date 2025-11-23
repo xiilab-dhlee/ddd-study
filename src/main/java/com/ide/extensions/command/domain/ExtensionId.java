@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Embeddable
 public class ExtensionId implements Serializable {
-    
+
     @Column(name = "extension_id")
     private String id;
 

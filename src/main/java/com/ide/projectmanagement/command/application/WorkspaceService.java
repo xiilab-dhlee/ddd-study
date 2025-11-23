@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class WorkspaceService {
-    
+
     private WorkspaceRepository workspaceRepository;
 
     public WorkspaceService(WorkspaceRepository workspaceRepository) {

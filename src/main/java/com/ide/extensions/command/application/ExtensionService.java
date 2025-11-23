@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ExtensionService {
-    
+
     private ExtensionRepository extensionRepository;
 
     public ExtensionService(ExtensionRepository extensionRepository) {

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class EditorId implements Serializable {
-    
+
     @Column(name = "editor_id")
     private String id;
 

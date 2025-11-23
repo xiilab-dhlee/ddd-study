@@ -7,20 +7,20 @@ import javax.persistence.Enumerated;
 
 @Embeddable
 public class CompletionItem {
-    
+
     @Column(name = "label")
     private String label;
-    
+
     @Column(name = "insert_text")
     private String insertText;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "completion_type")
     private CompletionType type;
-    
+
     @Column(name = "documentation")
     private String documentation;
-    
+
     @Column(name = "confidence_score")
     private double confidenceScore;
 

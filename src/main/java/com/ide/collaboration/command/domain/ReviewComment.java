@@ -6,16 +6,16 @@ import java.time.LocalDateTime;
 
 @Embeddable
 public class ReviewComment {
-    
+
     @Column(name = "comment_text")
     private String text;
-    
+
     @Column(name = "line_number")
     private int lineNumber;
-    
+
     @Column(name = "commenter_id")
     private String commenterId;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

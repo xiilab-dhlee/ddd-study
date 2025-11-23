@@ -10,36 +10,36 @@ import java.util.List;
 @Entity
 @Table(name = "debug_session")
 public class DebugSession {
-    
+
     @EmbeddedId
     private DebugSessionId id;
-    
+
     @Column(name = "program_path")
     private String programPath;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private DebugStatus status;
-    
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "session_id")
     private List<Breakpoint> breakpoints;
-    
+
     @ElementCollection
     @CollectionTable(name = "watched_variables", 
                     joinColumns = @JoinColumn(name = "session_id"))
     @Column(name = "variable_name")
     private List<String> watchedVariables;
-    
+
     @Column(name = "current_line")
     private Integer currentLine;
-    
+
     @Column(name = "current_file")
     private String currentFile;
-    
+
     @Column(name = "started_at")
     private LocalDateTime startedAt;
-    
+
     @Column(name = "ended_at")
     private LocalDateTime endedAt;
 
@@ -53,7 +53,7 @@ public class DebugSession {
         this.breakpoints = new ArrayList<>();
         this.watchedVariables = new ArrayList<>();
         this.startedAt = LocalDateTime.now();
-        
+
         Events.raise(new DebugSessionStartedEvent(id, programPath));
     }
 
@@ -114,7 +114,6 @@ public class DebugSession {
         Events.raise(new DebugStepEvent(id, "stepOut"));
     }
 
-    // Getters
     public DebugSessionId getId() {
         return id;
     }

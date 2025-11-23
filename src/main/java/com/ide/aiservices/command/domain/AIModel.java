@@ -8,32 +8,32 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "ai_model")
 public class AIModel {
-    
+
     @EmbeddedId
     private AIModelId id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "provider")
     private AIProvider provider;
-    
+
     @Column(name = "model_version")
     private String modelVersion;
-    
+
     @Column(name = "max_tokens")
     private Integer maxTokens;
-    
+
     @Column(name = "temperature")
     private Double temperature;
-    
+
     @Column(name = "cost_per_token")
     private Double costPerToken;
-    
+
     @Column(name = "is_active")
     private boolean isActive;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -73,7 +73,6 @@ public class AIModel {
         this.costPerToken = newCost;
     }
 
-    // Getters
     public AIModelId getId() {
         return id;
     }

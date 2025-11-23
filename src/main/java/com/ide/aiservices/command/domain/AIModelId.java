@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class AIModelId implements Serializable {
-    
+
     @Column(name = "model_id")
     private String id;
 

@@ -3,7 +3,7 @@ package com.ide.projectmanagement.command.domain;
 import com.ide.common.event.Event;
 
 public class WorkspaceCreatedEvent extends Event {
-    
+
     private WorkspaceId workspaceId;
     private String name;
     private String rootPath;

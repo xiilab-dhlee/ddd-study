@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AgentTaskService {
-    
+
     private AgentTaskRepository agentTaskRepository;
 
     public AgentTaskService(AgentTaskRepository agentTaskRepository) {

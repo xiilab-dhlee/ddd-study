@@ -7,11 +7,11 @@ import javax.persistence.Enumerated;
 
 @Embeddable
 public class ThemeSettings {
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "theme")
     private Theme theme;
-    
+
     @Column(name = "icon_theme")
     private String iconTheme;
 

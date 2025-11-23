@@ -3,7 +3,7 @@ package com.ide.agent.command.domain;
 import com.ide.common.event.Event;
 
 public class AgentTaskFailedEvent extends Event {
-    
+
     private AgentId agentId;
     private String errorMessage;
 

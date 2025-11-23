@@ -5,22 +5,22 @@ import javax.persistence.*;
 @Entity
 @Table(name = "prompt_template")
 public class PromptTemplate {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Lob
     @Column(name = "template", columnDefinition = "TEXT")
     private String template;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "purpose")
     private PromptPurpose purpose;
-    
+
     @Column(name = "max_context_files")
     private Integer maxContextFiles;
 
@@ -42,7 +42,6 @@ public class PromptTemplate {
         return rendered;
     }
 
-    // Getters
     public Long getId() {
         return id;
     }

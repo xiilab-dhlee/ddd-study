@@ -8,30 +8,30 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "terminal_session")
 public class TerminalSession {
-    
+
     @EmbeddedId
     private TerminalSessionId id;
-    
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "working_directory")
     private String workingDirectory;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "shell_type")
     private ShellType shellType;
-    
+
     @Column(name = "is_active")
     private boolean isActive;
-    
+
     @Lob
     @Column(name = "output_buffer", columnDefinition = "TEXT")
     private String outputBuffer;
-    
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-    
+
     @Column(name = "last_command_at")
     private LocalDateTime lastCommandAt;
 
@@ -47,7 +47,7 @@ public class TerminalSession {
         this.isActive = true;
         this.outputBuffer = "";
         this.createdAt = LocalDateTime.now();
-        
+
         Events.raise(new TerminalSessionCreatedEvent(id, name));
     }
 
@@ -72,7 +72,6 @@ public class TerminalSession {
         Events.raise(new TerminalSessionClosedEvent(id));
     }
 
-    // Getters
     public TerminalSessionId getId() {
         return id;
     }

@@ -5,10 +5,10 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class CursorPosition {
-    
+
     @Column(name = "line_number")
     private int line;
-    
+
     @Column(name = "column_number")
     private int column;
 

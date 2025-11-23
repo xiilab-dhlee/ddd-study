@@ -7,13 +7,13 @@ import javax.persistence.Enumerated;
 
 @Embeddable
 public class Participant {
-    
+
     @Column(name = "user_id")
     private String userId;
-    
+
     @Column(name = "user_name")
     private String userName;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private ParticipantRole role;

@@ -3,7 +3,7 @@ package com.ide.agent.command.domain;
 import com.ide.common.event.Event;
 
 public class AgentTaskCreatedEvent extends Event {
-    
+
     private AgentId agentId;
     private AgentTaskType taskType;
     private String description;

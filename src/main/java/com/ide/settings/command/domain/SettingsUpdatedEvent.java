@@ -3,7 +3,7 @@ package com.ide.settings.command.domain;
 import com.ide.common.event.Event;
 
 public class SettingsUpdatedEvent extends Event {
-    
+
     private UserSettingsId settingsId;
     private String settingsType;
 

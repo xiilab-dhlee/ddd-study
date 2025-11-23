@@ -3,7 +3,7 @@ package com.ide.editor.command.domain;
 import com.ide.common.event.Event;
 
 public class EditorOpenedEvent extends Event {
-    
+
     private EditorId editorId;
     private String filePath;
     private ProgrammingLanguage language;

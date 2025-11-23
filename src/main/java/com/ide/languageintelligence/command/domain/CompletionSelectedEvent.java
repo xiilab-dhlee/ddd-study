@@ -3,7 +3,7 @@ package com.ide.languageintelligence.command.domain;
 import com.ide.common.event.Event;
 
 public class CompletionSelectedEvent extends Event {
-    
+
     private CodeCompletionId completionId;
     private CompletionItem selectedItem;
 

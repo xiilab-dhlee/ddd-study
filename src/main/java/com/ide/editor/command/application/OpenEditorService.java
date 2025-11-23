@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class OpenEditorService {
-    
+
     private EditorRepository editorRepository;
 
     public OpenEditorService(EditorRepository editorRepository) {

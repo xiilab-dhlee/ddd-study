@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Embeddable
 public class WorkspaceId implements Serializable {
-    
+
     @Column(name = "workspace_id")
     private String id;
 
